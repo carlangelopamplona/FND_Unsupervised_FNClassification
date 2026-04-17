@@ -1,0 +1,22 @@
+{
+  "vocab_size": 100,
+  "window_size": 10,
+  "rank_configs": [
+    6,
+    8
+  ],
+  "decomposition": "cp_apr_kl",
+  "n_iter": 12,
+  "ecdf_percentiles": [
+    90,
+    80,
+    65
+  ],
+  "n_coclusters": 6,
+  "top_k_news": [
+    10,
+    15
+  ],
+  "repeats": 1,
+  "seed": 42
+}

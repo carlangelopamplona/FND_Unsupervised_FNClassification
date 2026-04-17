@@ -1,0 +1,307 @@
+{
+  "dataset": {
+    "csv_path": "data\\fake.csv",
+    "n_docs": 114,
+    "class_distribution": {
+      "satire": 38,
+      "bias": 38,
+      "conspiracy": 38
+    },
+    "excluded_labels": [
+      "fake",
+      "bs"
+    ],
+    "min_words": 100,
+    "per_class_samples": 75
+  },
+  "config": {
+    "vocab_size": 100,
+    "window_size": 10,
+    "rank_configs": [
+      6,
+      8
+    ],
+    "decomposition": "cp_apr_kl",
+    "n_iter": 12,
+    "ecdf_percentiles": [
+      90,
+      80,
+      65
+    ],
+    "n_coclusters": 6,
+    "top_k_news": [
+      10,
+      15
+    ],
+    "repeats": 1,
+    "seed": 42
+  },
+  "tier1": {
+    "summary": {
+      "6": {
+        "10": {
+          "homogeneity_median": 0.5666666666666667,
+          "homogeneity_mean": 0.5666666666666667,
+          "outlier_variety_mean": 1.8333333333333333,
+          "categories_identified_mean": 3.0
+        },
+        "15": {
+          "homogeneity_median": 0.5333333333333333,
+          "homogeneity_mean": 0.5333333333333333,
+          "outlier_variety_mean": 2.0,
+          "categories_identified_mean": 3.0
+        }
+      },
+      "8": {
+        "10": {
+          "homogeneity_median": 0.5874999999999999,
+          "homogeneity_mean": 0.5874999999999999,
+          "outlier_variety_mean": 1.875,
+          "categories_identified_mean": 3.0
+        },
+        "15": {
+          "homogeneity_median": 0.6,
+          "homogeneity_mean": 0.6,
+          "outlier_variety_mean": 2.0,
+          "categories_identified_mean": 3.0
+        }
+      }
+    }
+  },
+  "tier2": {
+    "homogeneity_median": 0.1825458304894734,
+    "homogeneity_mean": 0.1825458304894734,
+    "homogeneity_std": 0.0,
+    "mean_outlier_variety_median": 2.0,
+    "mean_outlier_variety_mean": 2.0,
+    "runs": [
+      {
+        "classes": [
+          "bias",
+          "conspiracy",
+          "satire"
+        ],
+        "vocab_size_used": 100,
+        "decomposition_diagnostics": [
+          {
+            "rank": 6,
+            "method": "cp_apr_kl",
+            "final_kl": 500008.2324339886
+          },
+          {
+            "rank": 8,
+            "method": "cp_apr_kl",
+            "final_kl": 499266.6699717056
+          }
+        ],
+        "tier1": {
+          "6": {
+            "10": {
+              "homogeneity_mean": 0.5666666666666667,
+              "homogeneity_std": 0.15986105077709065,
+              "outlier_variety_mean": 1.8333333333333333,
+              "categories_identified": 3,
+              "n_factors": 6
+            },
+            "15": {
+              "homogeneity_mean": 0.5333333333333333,
+              "homogeneity_std": 0.14401645996461915,
+              "outlier_variety_mean": 2.0,
+              "categories_identified": 3,
+              "n_factors": 6
+            }
+          },
+          "8": {
+            "10": {
+              "homogeneity_mean": 0.5874999999999999,
+              "homogeneity_std": 0.09270248108869576,
+              "outlier_variety_mean": 1.875,
+              "categories_identified": 3,
+              "n_factors": 8
+            },
+            "15": {
+              "homogeneity_mean": 0.6,
+              "homogeneity_std": 0.08819171036881966,
+              "outlier_variety_mean": 2.0,
+              "categories_identified": 3,
+              "n_factors": 8
+            }
+          }
+        },
+        "tier2": {
+          "homogeneity": 0.1825458304894734,
+          "outlier": {
+            "mean_outlier_variety": 2.0,
+            "clusters": [
+              {
+                "cluster": 0,
+                "size": 27,
+                "dominant_label": 0,
+                "dominant_fraction": 0.4444444444444444,
+                "outlier_count": 15,
+                "outlier_variety": 2
+              },
+              {
+                "cluster": 1,
+                "size": 27,
+                "dominant_label": 1,
+                "dominant_fraction": 0.4074074074074074,
+                "outlier_count": 16,
+                "outlier_variety": 2
+              },
+              {
+                "cluster": 2,
+                "size": 12,
+                "dominant_label": 1,
+                "dominant_fraction": 0.8333333333333334,
+                "outlier_count": 2,
+                "outlier_variety": 2
+              },
+              {
+                "cluster": 3,
+                "size": 15,
+                "dominant_label": 0,
+                "dominant_fraction": 0.7333333333333333,
+                "outlier_count": 4,
+                "outlier_variety": 2
+              },
+              {
+                "cluster": 4,
+                "size": 14,
+                "dominant_label": 2,
+                "dominant_fraction": 0.6428571428571429,
+                "outlier_count": 5,
+                "outlier_variety": 2
+              },
+              {
+                "cluster": 5,
+                "size": 19,
+                "dominant_label": 2,
+                "dominant_fraction": 0.7368421052631579,
+                "outlier_count": 5,
+                "outlier_variety": 2
+              }
+            ]
+          },
+          "cluster_labels": [
+            0,
+            0,
+            1,
+            1,
+            4,
+            3,
+            5,
+            1,
+            1,
+            0,
+            3,
+            0,
+            5,
+            2,
+            5,
+            0,
+            0,
+            5,
+            5,
+            1,
+            5,
+            5,
+            5,
+            0,
+            4,
+            5,
+            2,
+            0,
+            4,
+            2,
+            1,
+            3,
+            4,
+            4,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0,
+            1,
+            3,
+            3,
+            1,
+            3,
+            2,
+            1,
+            2,
+            3,
+            2,
+            5,
+            0,
+            1,
+            0,
+            4,
+            0,
+            1,
+            4,
+            2,
+            1,
+            3,
+            2,
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            4,
+            5,
+            0,
+            0,
+            5,
+            3,
+            0,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            3,
+            3,
+            0,
+            5,
+            5,
+            4,
+            4,
+            2,
+            3,
+            1,
+            5,
+            5,
+            5,
+            3,
+            0,
+            2,
+            3,
+            5,
+            5,
+            0,
+            4,
+            3,
+            4,
+            1
+          ]
+        }
+      }
+    ],
+    "assignments": "reports\\cocluster_assignments.csv"
+  }
+}
